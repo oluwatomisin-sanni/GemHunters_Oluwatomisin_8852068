@@ -162,4 +162,9 @@ class Game
         currentTurn = player1;
         totalTurns = 0;
     }
+    private void SwitchTurns()
+    {
+        currentTurn = currentTurn == player1 ? player2 : player1;
+    }
+
 }
