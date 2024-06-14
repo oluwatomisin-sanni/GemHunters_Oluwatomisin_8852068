@@ -167,4 +167,14 @@ class Game
         currentTurn = currentTurn == player1 ? player2 : player1;
     }
 
+    private bool IsGameOver()
+    {
+        int maxTurns = 30;
+        return totalTurns >= maxTurns;
+    }
+    private void DisplayScores()
+    {
+        Console.WriteLine($"Scores: P1 = {player1.Score}, P2 = {player2.Score}");
+        Console.WriteLine($"Gems: P1 = {player1.GemCount}, P2 = {player2.GemCount}");
+    }
 }
