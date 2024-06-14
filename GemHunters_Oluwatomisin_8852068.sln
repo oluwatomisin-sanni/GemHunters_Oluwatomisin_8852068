@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GemHunters_Oluwatomisin_8852068", "GemHunters_Oluwatomisin_8852068.csproj", "{B1C4DB0D-7ABA-46B1-B552-2C4B96FE429C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1C4DB0D-7ABA-46B1-B552-2C4B96FE429C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1C4DB0D-7ABA-46B1-B552-2C4B96FE429C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1C4DB0D-7ABA-46B1-B552-2C4B96FE429C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1C4DB0D-7ABA-46B1-B552-2C4B96FE429C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {181DFF92-15BA-42CF-A528-22F86EBF2394}
+	EndGlobalSection
+EndGlobal
