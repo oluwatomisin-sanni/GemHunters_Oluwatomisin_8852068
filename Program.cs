@@ -140,8 +140,9 @@ class Board
 
         if (Grid[playerY, playerX].Occupant == "G")
         {
-            player.GemCount += 1;
+            
             Grid[playerY, playerX].Occupant = "-"; //removes the gem
+            player.GemCount += 1;
             player.Score += 10;
         }
     }
@@ -193,5 +194,39 @@ class Game
         {
             Console.WriteLine("It's a draw!");
         }
+    }
+    public void Start()
+    {
+        while (!IsGameOver())
+        {
+            board.Display();
+            DisplayScores();
+
+            Console.Write($"{currentTurn.Name}'s turn (U/D/L/R): ");
+            char direction = Char.ToUpper(Console.ReadKey().KeyChar);
+            Console.WriteLine();
+
+            if (board.IsValidMove(currentTurn, direction))
+            {
+                // Update the board to reflect the player's movement
+                board.Grid[currentTurn.Position.Y, currentTurn.Position.X].Occupant = "-";
+                currentTurn.Move(direction);
+                board.Grid[currentTurn.Position.Y, currentTurn.Position.X].Occupant = currentTurn.Name;
+
+                // Check if player collected a gem
+                board.CollectGem(currentTurn);
+
+                DisplayScores();
+                SwitchTurns();
+            }
+            else
+            {
+                Console.WriteLine("Invalid move. Try again.");
+            }
+
+            totalTurns++;
+        }
+
+        AnnounceWinner();
     }
 }
