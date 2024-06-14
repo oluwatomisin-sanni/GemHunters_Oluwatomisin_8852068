@@ -92,4 +92,74 @@ class Board
         }
         PlaceElements();
     }
- }
+    public void Display()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            for (int j = 0; j < 6; j++)
+            {
+                Console.Write(Grid[i, j].Occupant + " ");
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine();
+    }
+
+    public bool IsValidMove(Player player, char direction)
+    {
+        int newX = player.Position.X;
+        int newY = player.Position.Y;
+
+        switch (direction)
+        {
+            case 'U':
+                newY -= 1;
+                break;
+            case 'D':
+                newY += 1;
+                break;
+            case 'L':
+                newX -= 1;
+                break;
+            case 'R':
+                newX += 1;
+                break;
+        }
+
+        if (newX < 0 || newX >= 6 || newY < 0 || newY >= 6)
+            return false;
+
+        string occupant = Grid[newY, newX].Occupant;
+        return occupant != "O" && occupant != "P1" && occupant != "P2";
+    }
+
+    public void CollectGem(Player player)
+    {
+        int playerX = player.Position.X;
+        int playerY = player.Position.Y;
+
+        if (Grid[playerY, playerX].Occupant == "G")
+        {
+            player.GemCount += 1;
+            Grid[playerY, playerX].Occupant = "-"; //removes the gem
+            player.Score += 10;
+        }
+    }
+}
+class Game
+{
+    private Board board;
+    private Player player1;
+    private Player player2;
+    private Player currentTurn;
+    private int totalTurns;
+
+    public Game()
+    {
+        board = new Board();
+        player1 = new Player("P1", new Position(0, 0));
+        player2 = new Player("P2", new Position(5, 5));
+        currentTurn = player1;
+        totalTurns = 0;
+    }
+}
