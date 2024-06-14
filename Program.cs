@@ -177,4 +177,21 @@ class Game
         Console.WriteLine($"Scores: P1 = {player1.Score}, P2 = {player2.Score}");
         Console.WriteLine($"Gems: P1 = {player1.GemCount}, P2 = {player2.GemCount}");
     }
+    private void AnnounceWinner()
+    {
+        Console.WriteLine("Game Over!");
+        DisplayScores();
+        if (player1.Score > player2.Score)
+        {
+            Console.WriteLine("Player 1 wins!");
+        }
+        else if (player2.Score > player1.Score)
+        {
+            Console.WriteLine("Player 2 wins!");
+        }
+        else
+        {
+            Console.WriteLine("It's a draw!");
+        }
+    }
 }
